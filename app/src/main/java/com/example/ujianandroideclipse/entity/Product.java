@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 public class Product {
 
-    @SerializedName("id")
-    private long id;
     @SerializedName("name")
     private String name;
     @SerializedName("price")
@@ -15,20 +13,15 @@ public class Product {
     @SerializedName("variant")
     private String variant;
 
-    public Product(long id, String name, int price, String description, String variant) {
-        this.id = id;
+    public Product(String name, int price, String description, String variant) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.variant = variant;
     }
 
-    public long getId() {
-        return id;
-    }
+    public Product() {
 
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -62,4 +55,6 @@ public class Product {
     public void setVariant(String variant) {
         this.variant = variant;
     }
+
+
 }

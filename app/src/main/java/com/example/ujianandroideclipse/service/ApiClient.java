@@ -17,4 +17,9 @@ public class ApiClient {
         }
         return retrofit;
         }
+
+        public static ProductInterface getProdInterface(){
+                ProductInterface productInterface = getRetrofit().create(ProductInterface.class);
+                return productInterface;
+        }
 }

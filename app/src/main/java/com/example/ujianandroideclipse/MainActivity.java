@@ -46,13 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         ProductInterface productInterface = ApiClient.getRetrofit().create(ProductInterface.class);
         Call<ArrayList<Product>> call = productInterface.getAllProduct();
+
         call.enqueue(new Callback<ArrayList<Product>>() {
             @Override
             public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
             try {
                 //unknown purpose for developer, yet
                 prodData.addAll(response.body());
-
                 rcvData = findViewById(R.id.rcv_data);
 
                 //prodData as ArrayList object required for adapter
